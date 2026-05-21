@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
         compress: []
     };
 
-    const backendUrl = 'http://localhost:8989/api';
+    // Menggunakan relative path agar otomatis mengikuti domain tempat web bernaung
+    const backendUrl = '/api';
 
     // --- LOGIKA TAB SWITCHING ---
     const navButtons = document.querySelectorAll('.nav-btn');
