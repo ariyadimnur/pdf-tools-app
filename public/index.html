@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Workspace - Clean & Fast</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-file-pdf"></i>
+                <span>PDF.io</span>
+            </div>
+            <nav class="nav-menu">
+                <button class="nav-btn active" data-tab="merge">
+                    <i class="fa-solid fa-layer-group"></i> Merge PDF
+                </button>
+                <button class="nav-btn" data-tab="convert">
+                    <i class="fa-solid fa-arrows-rotate"></i> Convert PDF
+                </button>
+                <button class="nav-btn" data-tab="compress">
+                    <i class="fa-solid fa-compress"></i> Compress PDF
+                </button>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            
+            <section id="tab-merge" class="tab-content active">
+                <h2>Merge PDF Files</h2>
+                <p class="subtitle">Gabungkan hingga 50 file PDF menjadi satu dokumen secara berurutan.</p>
+                
+                <div class="dropzone" id="dropzone-merge">
+                    <input type="file" id="file-merge" multiple accept=".pdf" hidden>
+                    <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                    <p>Drag & drop file PDF kamu di sini, atau <span class="browse-btn">pilih file</span></p>
+                    <small>Mendukung banyak file sekaligus</small>
+                </div>
+                
+                <div class="file-preview-container" id="preview-merge"></div>
+                <button class="action-btn" id="btn-merge" disabled>
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Gabungkan PDF
+                </button>
+            </section>
+
+            <section id="tab-convert" class="tab-content">
+                <h2>Convert PDF</h2>
+                <p class="subtitle">Ubah dokumen PDF menjadi format Word (.docx) atau Excel (.xlsx).</p>
+                
+                <div class="format-selector">
+                    <label class="format-option">
+                        <input type="radio" name="convert-target" value="word" checked>
+                        <span class="custom-radio"><i class="fa-regular fa-file-word"></i> PDF to Word</span>
+                    </label>
+                    <label class="format-option">
+                        <input type="radio" name="convert-target" value="excel">
+                        <span class="custom-radio"><i class="fa-regular fa-file-excel"></i> PDF to Excel</span>
+                    </label>
+                </div>
+
+                <div class="dropzone" id="dropzone-convert">
+                    <input type="file" id="file-convert" accept=".pdf" hidden>
+                    <i class="fa-solid fa-file-invoice upload-icon"></i>
+                    <p>Pilih atau drop file PDF yang ingin diconvert</p>
+                </div>
+                
+                <div class="file-preview-container" id="preview-convert"></div>
+                <button class="action-btn" id="btn-convert" disabled>
+                    <i class="fa-solid fa-gear"></i> Mulai Konversi
+                </button>
+            </section>
+
+            <section id="tab-compress" class="tab-content">
+                <h2>Compress PDF</h2>
+                <p class="subtitle">Perkecil ukuran file PDF tanpa mengurangi kualitas teks secara signifikan.</p>
+                
+                <div class="dropzone" id="dropzone-compress">
+                    <input type="file" id="file-compress" accept=".pdf" hidden>
+                    <i class="fa-solid fa-file-shield upload-icon"></i>
+                    <p>Pilih file PDF yang ukurannya ingin diperkecil</p>
+                </div>
+                
+                <div class="file-preview-container" id="preview-compress"></div>
+                <button class="action-btn" id="btn-compress" disabled>
+                    <i class="fa-solid fa-minimize"></i> Compress PDF
+                </button>
+            </section>
+
+            <div class="overlay" id="loading-overlay">
+                <div class="loader-box">
+                    <div class="spinner"></div>
+                    <p id="loading-text">Sedang memproses dokumen...</p>
+                </div>
+            </div>
+
+            <footer class="app-footer">
+                <div class="footer-content">
+                    <p>&copy; 2026 ARIYADI M NUR. All rights reserved.</p>
+                    <div class="footer-links">
+                        <span class="footer-tag">Pro Version v1.0.0</span>
+                    </div>
+                </div>
+            </footer>
+
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

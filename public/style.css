@@ -1,0 +1,450 @@
+/* ==========================================================================
+   ✨ WEB KONVERTER PREMIUM & ELEGAN STYLING (FINAL PRO VERSION)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-primary: #f8fafc;
+    --bg-sidebar: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --accent-color: #4f46e5; /* Indigo Pro */
+    --accent-hover: #4338ca;
+    --border-color: #e2e8f0;
+    --danger-color: #ef4444;
+    
+    /* Tambahan Variabel untuk Sentuhan Premium */
+    --accent-light: #eeebff;
+    --shadow-sm: 0 2px 8px -1px rgba(15, 23, 42, 0.04), 0 1px 3px 0 rgba(15, 23, 42, 0.02);
+    --shadow-md: 0 12px 24px -6px rgba(15, 23, 42, 0.06), 0 4px 10px -2px rgba(15, 23, 42, 0.03);
+    --shadow-lg: 0 20px 32px -12px rgba(15, 23, 42, 0.08), 0 8px 16px -4px rgba(15, 23, 42, 0.04);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif; /* Menggunakan font premium modern */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.app-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* 🧭 Sidebar Styling (Lebih Clean & Terstruktur) */
+.sidebar {
+    width: 270px;
+    background-color: var(--bg-sidebar);
+    border-right: 1px solid var(--border-color);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    box-shadow: 4px 0 24px rgba(15, 23, 42, 0.015);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent-color);
+    letter-spacing: -0.5px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    border-radius: 12px; /* Lebih membulat modern */
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-btn:hover {
+    background-color: #f1f5f9;
+    color: var(--text-main);
+    transform: translateX(2px); /* Efek bergeser tipis pas di-hover */
+}
+
+.nav-btn.active {
+    background-color: var(--accent-light);
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* 💻 Main Content Area */
+.main-content {
+    flex: 1;
+    padding: 48px 56px;
+    overflow-y: auto;
+    position: relative;
+    background: radial-gradient(at top left, rgba(238, 235, 255, 0.3) 0%, transparent 40%); /* Aksen bias cahaya elegan */
+}
+
+.tab-content {
+    display: none;
+    max-width: 760px;
+    margin: 0 auto; /* Supaya area kerja otomatis center di layar lebar */
+    animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* 📥 Dropzone / Upload Area (Efek Glassmorphism Semu) */
+.dropzone {
+    border: 2px dashed #cbd5e1;
+    background-color: #ffffff;
+    border-radius: 16px; /* Lebih halus sudutnya */
+    padding: 64px 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    box-shadow: var(--shadow-sm);
+}
+
+.dropzone:hover, .dropzone.dragover {
+    border-color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: var(--shadow-md);
+    transform: scale(1.005) translateY(-2px);
+}
+
+.upload-icon {
+    font-size: 44px;
+    color: #94a3b8;
+    transition: all 0.25s ease;
+    background: #f1f5f9;
+    padding: 16px;
+    border-radius: 50%;
+}
+
+.dropzone:hover .upload-icon {
+    color: var(--accent-color);
+    background: var(--accent-light);
+    transform: translateY(-4px); /* Icon membal ke atas sedikit saat di-hover */
+}
+
+.browse-btn {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.dropzone:hover .browse-btn {
+    border-color: var(--accent-color);
+}
+
+/* 🔘 Format Selector Radio (Kelihatan Seperti Card Premium) */
+.format-selector {
+    display: flex;
+    gap: 16px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.format-option {
+    flex: 1;
+}
+
+.format-option input[type="radio"] {
+    display: none;
+}
+
+.custom-radio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 24px;
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    color: #475569;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.custom-radio:hover {
+    border-color: #94a3b8;
+    transform: translateY(-1px);
+}
+
+.format-option input[type="radio"]:checked + .custom-radio {
+    border-color: var(--accent-color);
+    background-color: var(--accent-light);
+    color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15); /* Efek glow tipis berkelas */
+}
+
+/* 📄 File Preview List */
+.file-preview-container {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 320px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+/* Kustomisasi scrollbar preview list agar minimalis */
+.file-preview-container::-webkit-scrollbar {
+    width: 5px;
+}
+.file-preview-container::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    animation: fadeIn 0.2s ease;
+}
+
+.file-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.file-info i {
+    color: var(--danger-color);
+    font-size: 20px;
+    background: #fef2f2;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.file-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    max-width: 420px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-size {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-top: 2px;
+}
+
+.remove-file {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 6px;
+    transition: all 0.15s ease;
+}
+
+.remove-file:hover {
+    color: var(--danger-color);
+    background-color: #fef2f2;
+}
+
+/* ⚡ Action Button (Gradient Berkelas ala Aplikasi Modern) */
+.action-btn {
+    margin-top: 32px;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--accent-color) 0%, #6366f1 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 10px 24px -8px rgba(79, 70, 229, 0.4);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.action-btn:hover {
+    background: linear-gradient(135deg, var(--accent-hover) 0%, #4f46e5 100%);
+    box-shadow: 0 12px 28px -6px rgba(79, 70, 229, 0.5);
+    transform: translateY(-1px);
+}
+
+.action-btn:active {
+    transform: translateY(1px);
+}
+
+.action-btn:disabled {
+    background: #e2e8f0 !important;
+    color: #94a3b8 !important;
+    box-shadow: none !important;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* 🔒 Processing Overlay (Efek Blur Kaca Premium) */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(8px); /* Blur kaca lebih tebal agar sinematik */
+    -webkit-backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.overlay.active {
+    display: flex;
+}
+
+.loader-box {
+    background: #ffffff;
+    padding: 40px 56px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.loader-box p {
+    font-size: 15px;
+    font-weight: 600;
+    color: #334155;
+    margin-top: 8px;
+}
+
+.spinner {
+    width: 44px;
+    height: 44px;
+    border: 4px solid #f1f5f9;
+    border-top: 4px solid var(--accent-color);
+    border-radius: 50%;
+    animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite; /* Putaran spinner lebih dinamis */
+    margin: 0 auto 20px;
+}
+
+/* ==========================================================================
+   ✨ APP FOOTER PREMIUM STYLING
+   ========================================================================== */
+.app-footer {
+    margin-top: 64px; /* Memberi jarak aman yang longgar dari area dropzone */
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+    width: 100%;
+    max-width: 760px; /* Lebarnya otomatis sejajar dengan tab-content kamu */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-tag {
+    background-color: var(--accent-light);
+    color: var(--accent-color);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* Responsif untuk layar HP/Sempit agar layout footer tidak patah */
+@media (max-width: 640px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+}
+
+/* ============== Footer End ============== */
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
